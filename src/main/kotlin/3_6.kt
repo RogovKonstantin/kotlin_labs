@@ -1,6 +1,13 @@
 package org.example
 
 fun main() {
-    val sum = (5..57).filter { it != 34 && it != 46 && it != 52 }.sum()
+    var sum = 0
+    var number = 5
+    while (number <= 57) {
+        if (number != 34 && number != 46 && number != 52) {
+            sum += number
+        }
+        number++
+    }
     println(sum)
 }
