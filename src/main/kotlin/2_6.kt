@@ -4,17 +4,17 @@ import java.util.*
 
 fun main() {
     val scanner = Scanner(System.`in`)
-    println("Введите значение экспорта:")
-    val export = scanner.nextInt()
-    println("Введите значение импорта:")
-    val import = scanner.nextInt()
+    println("Введите значение потерь:")
+    val loss = scanner.nextInt()
+    println("Введите значение прибыли:")
+    val profit = scanner.nextInt()
 
-    val balance = export - import
+    val balance = loss - profit
 
-    if (balance > 0) {
-        println("Ваша прибыль составила: $balance")
-    } else if (balance < 0) {
-        println("Ваши убытки составили: ${-balance}")
+    if (loss<profit) {
+        println("Ваша прибыль составила: ${-balance}")
+    } else if (loss>profit) {
+        println("Ваши убытки составили: $balance")
     } else {
         println("Нет ни прибыли, ни убытков")
     }

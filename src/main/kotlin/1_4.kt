@@ -12,4 +12,6 @@ fun main() {
     val weeks = (numOfDays % 365) / 7
     val days = (numOfDays % 365) % 7
     println("Лет: $years, недель: $weeks, дней: $days")
+
 }
+//2642

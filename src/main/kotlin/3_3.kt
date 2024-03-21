@@ -9,10 +9,12 @@ fun main() {
     }
 
     val absNumber = Math.abs(number)
+    val result = mutableListOf<Int>()
 
     for (i in 1..absNumber) {
         if (absNumber % i == 0) {
-            println(i)
+            result.add(i)
         }
     }
+    println(result.joinToString())
 }

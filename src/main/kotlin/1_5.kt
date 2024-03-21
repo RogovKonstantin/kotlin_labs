@@ -11,3 +11,4 @@ fun main() {
     val result = "$num${num * 2}"
     println(result)
 }
+//23

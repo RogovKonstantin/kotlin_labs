@@ -8,3 +8,4 @@ fun main() {
     val digits = number.map { it }.joinToString(", ")
     println(digits)
 }
+//5934
