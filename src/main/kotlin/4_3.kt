@@ -1,11 +1,19 @@
 package org.example
 
 fun main() {
-    val list = mutableListOf(24, -63, 67, -12, 88, 94, -28, 82, 0, 53)
+    val input = readLine()
+    val numbers = input?.split(", ")?.map { it.toInt() }
 
-    val min = list.minOrNull()
-    val max = list.maxOrNull()
+    if (numbers != null) {
+        val list = numbers.toMutableList()
 
-    println("Минимум: $min")
-    println("Максимум: $max")
+        val min = list.minOrNull()
+        val max = list.maxOrNull()
+
+        println("Minimum: $min")
+        println("Maximum: $max")
+    } else {
+        println("неправильный ввод")
+    }
 }
+//24, -63, 67, -12, 88, 94, -28, 82, 0, 53
