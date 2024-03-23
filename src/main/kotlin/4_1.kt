@@ -1,13 +1,10 @@
 package org.example
 
 fun main() {
-    val num1 = 5
-    val num2 = 8
-
-    val start = minOf(num1, num2)
-    val end = maxOf(num1, num2)
-
+    val firstNumber = 5
+    val secondNumber = 8
+    val start = minOf(firstNumber, secondNumber)
+    val end = maxOf(firstNumber, secondNumber)
     val list = (start..end).toList()
-
-    println(list)
+    println(list.joinToString(separator = ", "))
 }
