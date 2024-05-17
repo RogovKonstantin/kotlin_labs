@@ -3,34 +3,30 @@ package org.example
 import kotlinx.coroutines.*
 import kotlin.system.measureTimeMillis
 
-suspend fun <T> withTimeoutFunction(block: suspend () -> T): T? {
-    return try {
+suspend fun executeWithTimeout(block: suspend () -> Unit) {
+    try {
         withTimeout(1000L) {
             block()
         }
     } catch (e: TimeoutCancellationException) {
         println("Too long body execution")
-        null
     }
 }
 
-
-fun main() = runBlocking {
+fun main():Unit = runBlocking {
     val time1 = measureTimeMillis {
-        val result = withTimeoutFunction {
+        executeWithTimeout {
             delay(500L)
-            "Hello"
+            println("Hello")
         }
-        println(result)
     }
     println(time1)
 
     val time2 = measureTimeMillis {
-        val result = withTimeoutFunction {
+        executeWithTimeout {
             delay(1500L)
-            "Hello"
+            println("Hello")
         }
-        println(result)
     }
     println(time2)
 }

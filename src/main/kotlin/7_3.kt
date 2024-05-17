@@ -5,7 +5,7 @@ import kotlin.random.Random
 import kotlin.system.measureTimeMillis
 
 suspend fun simpleTask(index: Int): Pair<Int, Boolean> {
-    val randomNumber = Random.nextInt(0, 100)
+    val randomNumber = Random.nextInt(1, 111)
     println("Корутина $index : $randomNumber")
     return Pair(index, randomNumber % 2 == 0)
 }

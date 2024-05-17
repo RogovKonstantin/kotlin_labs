@@ -1,20 +1,17 @@
 package org.example
 
-import kotlinx.coroutines.async
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 
 
-suspend fun complexMathOperation(param1: Int, param2: Int) {
+suspend fun complexMathOperation(param1: Int, param2: Int): Long = coroutineScope {
     val iterations = 555555555
-    var num = 0
+    var num: Long = 0
     for (i in 0 until iterations) {
-        num += param1 * param2 * (iterations * i / iterations) * (iterations * i / iterations)
+        num += param1.toLong() * param2 * (iterations * i / iterations) * (iterations * i / iterations)
     }
-    delay(1000L)
-    println(num)
+    num
 }
 
 fun main(): Unit = runBlocking {
-    complexMathOperation(1020404, 5435345)
+    println(complexMathOperation(1020404, 5435345))
 }

@@ -7,8 +7,8 @@ import java.util.*
 fun main(): Unit = runBlocking {
     launch {
         while (true) {
+            println(SimpleDateFormat("HH:mm:ss").format(Date(System.currentTimeMillis())))
             delay(1000L)
-            println(SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date(System.currentTimeMillis())))
         }
     }
 }
