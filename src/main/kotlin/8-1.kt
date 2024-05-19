@@ -14,7 +14,7 @@ suspend fun main() {
             launch(CoroutineName("downloader-$index")) {
                 val fileName = url.substringAfterLast("/")
                 try {
-                    downloadAndSaveImage(client, url, if (fileName.endsWith(".jpg")) fileName else "$fileName.jpg")
+                    downloadAndSaveImage1(client, url, if (fileName.endsWith(".jpg")) fileName else "$fileName.jpg")
                 } catch (e: Exception) {
                     println("Failed to download and save image: ${e.message}")
                 }
@@ -24,7 +24,7 @@ suspend fun main() {
     client.close()
 }
 
-suspend fun downloadAndSaveImage(client: HttpClient, url: String, fileName: String) {
+suspend fun downloadAndSaveImage1(client: HttpClient, url: String, fileName: String) {
     val bytes: ByteArray = client.get(url).body<ByteArray>()
     val filePath = "src/main/images/$fileName"
     try {
